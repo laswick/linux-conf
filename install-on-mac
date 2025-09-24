@@ -5,7 +5,7 @@
 
 STOW_ARGS="--verbose --dotfiles --target=$HOME"
 
-STOW_PACKAGES="vim zshrc vim git"
+STOW_PACKAGES="zshrc vim git"
 
 for package in $STOW_PACKAGES; do
     stow $STOW_ARGS $package
@@ -15,7 +15,7 @@ stow --verbose --target=$HOME/Library/Application\ Support/Code/User vscode
 
 # Top level symlinks need to be done manually.
 HERE=`pwd`
-HOME_CONFIG=$HOME/.config
-mkdir -p $HOME_CONFIG
-ln -fs $HERE/nvim $HOME_CONFIG
+DOT_CONFIG=$HOME/.config
+mkdir -p $DOT_CONFIG
+ln -fs $HERE/nvim $DOT_CONFIG
 
