@@ -1,0 +1,27 @@
+# Load Version Control Info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info:*' formats       '%b%u%c'
+zstyle ':vcs_info:*' actionformats '%b%u%c (%a)'
+
+NL=$'\n'
+
+#setopt PROMPT_SUBST
+setopt prompt_subst
+PROMPT='${NL}%F{gree}%n%F{blue}@%F{green}%m %F{magenta}${vcs_info_msg_0_}%f${NL}%F{blue}%~${NL}%F{cyan}$%f '
+
+export CLICOLOR=1
+
+PATH=$HOME/bin:$PATH:$HOME/Library/Python/3.8/bin
+export PATH
+
+alias ll='ls -l'
+alias grep='grep --colour'
+alias bc='bc -l'
+alias code='code -n'
+alias vi='nvim'

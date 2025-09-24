@@ -1,0 +1,42 @@
+[user]
+    name = Rob Laswick
+    email = robert.laswick@jdrfelectromag.com
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+    trustExitCode = true # use :cq to abort a vimdiff with lots of files
+[alias]
+    s = status -uno
+    diffx = difftool
+
+    l =  log -20 --date=format:'%Y-%m-%d' --pretty=format:'%C(magenta bold)%h%Creset %Creset%s %C(blue)%ad %Cgreen(%cr) %C(cyan)<%an>%Creset'
+    la = log --date=format:'%Y-%m-%d' --pretty=format:'%C(magenta bold)%h%Creset %Creset%s %C(blue)%ad %Cgreen(%cr) %C(cyan)<%an>%Creset'
+    ll = log --date=format:'%Y-%m-%d' --pretty=format:'%C(magenta bold)%h%Creset %C(blue bold)%s %Creset%C(white)%ad %Cgreen(%cr) %C(cyan)<%an>%Creset' --stat
+    l1 = log --oneline
+
+    t = "!git --no-pager tag --format='%(color:bold yellow)%(refname:short)%(color:reset) %(color:cyan)%(subject)%(color:reset) %(color:green)(%(*authordate:short))%(color:reset)'"
+
+    b = branch
+    bb = branch -avv
+    bme = "!f() { git branch | grep --color "rl/" -A100 -B100; }; f"
+    me = "!f() { git branch -a | grep --color "rl/" -A100 -B100; }; f"
+    who = "!f() { git branch -a | grep --color "/$1/"; }; f"
+    bbme = "!f() { git branch -avv | grep --color "rl/"; }; f"
+    stats = shortlog -sn
+
+[core]
+    editor = nvim
+[push]
+    default = tracking
+    autoSetupRemote = true
+[pull]
+    default = current
+	ff = only
+[rebase]
+    autoSquash = true
+
+# use ssh instead of the default https
+[url "git@github.com:JDRFElectromag"]
+    insteadOf = https://github.com/JDRFElectromag
+

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Script to install config files using GNU Stow.
+# This script is idempotent and can be run multiple times without causing issues.
+
+STOW_ARGS="--verbose --dotfiles --target=$HOME"
+
+STOW_PACKAGES="vim bash vim git"
+
+for package in $STOW_PACKAGES; do
+    stow $STOW_ARGS $package
+done
+
+stow --verbose --target=$HOME/.config/Code/User vscode
+
+# Top level symlinks need to be done manually.
+HERE=`pwd`
+HOME_CONFIG=$HOME/.config
+mkdir -p $HOME_CONFIG
+ln -fs $HERE/nvim $HOME_CONFIG
+
+source ~/.bashrc
+

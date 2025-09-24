@@ -1,0 +1,69 @@
+// This file needs to be placed in or simlinked to
+// Linux:   ~/.config/Code/User/settings.json
+// Mac:     ~/Library/Application\ Support/Code/User/settings.json
+{
+    "vim.vimrc.enable": true,
+
+    //MAC ONLY: "workbench.fontAliasing": "antialiased",
+
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+    "editor.tabCompletion": "on",
+    "editor.guides.indentation": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.minimap.autohide": "mouseover",
+    "editor.minimap.renderCharacters": false,
+    "editor.accessibilitySupport": "off",
+
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.drawBoldTextInBrightColors": true,
+    "terminal.integrated.customGlyphs": true,
+    "terminal.integrated.rightClickBehavior": "copyPaste",
+    "terminal.integrated.fontWeightBold": "1",
+    "terminal.integrated.fontWeight": "normal",
+    //MAC ONLY: "terminal.integrated.gpuAcceleration": "on",
+
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.files.exclude": {
+      "**/ui-app-lts-designer": true,
+      "**/.vscode": true,
+      "**/.vs": true
+    },
+
+    "cSpell.enabled": true,
+
+    "window.zoomLevel": 0,
+
+    "markdown-preview-enhanced.previewTheme": "github-light.css",
+
+    "vsicons.dontShowNewVersionMessage": true,
+
+    "search.useIgnoreFiles": true,
+    "search.exclude": {
+      "**/ui-app-lts-designer": true
+    },
+
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+      "**/ui-app-lts-designer": true
+    },
+
+    "cmake.pinnedCommands": [
+      "workbench.action.tasks.configureTaskRunner",
+      "workbench.action.tasks.runTask"
+    ],
+
+    "git.openRepositoryInParentFolders": "always",
+
+    "github.copilot.nextEditSuggestions.enabled": true,
+
+    "workbench.colorTheme": "Correia Github+EverForest Theme",
+  }
+

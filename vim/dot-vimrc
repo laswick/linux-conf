@@ -1,0 +1,129 @@
+set tags=tags;                                "Look in the local ctags database.
+set backspace=indent,eol,start           "Allow backspacing over inserted/chars.
+set autoindent                                  "Copy indent from previous line.
+set mousehide                             "Hide mouse once a character is typed.
+"set mouse=a                    "Allow setting of cursor position with the mouse.
+set showmatch                                 "Highlight matching brace/bracket.
+set incsearch          "Jump to first instance of search chars as they're found.
+set hlsearch                                          "Highlight search matches.
+set wildmode=longest,list,full                         "Wildcard search options.
+set ignorecase                                                     "Ignore case.
+set smartcase      "Override ignorecase if search contains upper and lower case.
+set expandtab                                         "Replace tabs with spaces.
+set smarttab          "Delete the right number of spaces when backspacing a tab.
+set tabstop=4                                        "Number of spaces in a tab.
+set shiftwidth=4                    "Number of spaces in manual indent (>>, <<).
+set fileformat=unix                                          "Use \n as the EOL.
+set fileformats=unix,dos
+set ruler               "Show the line and column number fo the cursor position.
+set winwidth=110                              "Set file width to num characters.
+set nowrap                                          "Prevent auto line wrapping.
+set t_Co=256                                     "Force standard XTERM settings.
+"set background=light             "Optimize colours for black on white terminals.
+set background=dark              "Optimize colours for white on black terminals.
+set laststatus=2                                    "Display status bar alwasys.
+"set number                                                "Turn on line numbers.
+
+syntax enable                                      "Turn on syntax highlighting.
+"filetype on                              "Enable automatic file type detection.
+filetype plugin indent on
+
+call plug#begin()
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+call plug#end()
+
+colorscheme gruvbox
+
+" Colourscheme Settings and Overrides
+" gruvBox
+highlight Comment       ctermfg=101
+highlight SpellBad      ctermfg=red     cterm=reverse
+highlight Todo          ctermfg=yellow  ctermbg=88
+highlight StatusLine    ctermfg=236     ctermbg=green
+highlight StatusLineNC  ctermfg=236     ctermbg=red
+highlight VertSplit     ctermfg=236     ctermbg=236
+
+" vimdiff
+if &diff
+    set number
+    set winwidth=120
+
+    "Gruvbox
+    highlight Comment       ctermfg=101
+    highlight SpellBad      ctermfg=red     cterm=reverse
+    highlight Todo          ctermfg=yellow  ctermbg=88
+    highlight StatusLine    ctermfg=236     ctermbg=green
+    highlight StatusLineNC  ctermfg=236     ctermbg=red
+    highlight VertSplit     ctermfg=236     ctermbg=236
+endif
+" vimdiff cheatsheet:
+"   do    Get changes from the other windown into the current window.
+"   dp    Put changes from the current window into the other window.
+"   ]c    Jump to next change.
+"   [c    Jump to previous change.
+"   zo    Open folded lines.
+"   zc    Close folded lines.
+"   zm    Fold both files completely.
+"   :cq   Quit vimdiff, regardless how mnay open buffers there are.
+"         This is typically launched from git, via: git diffx
+"         For this to work from git, `trustExitCode = true` must be set
+"         in (under) [difftool] in .gitconfig.
+
+highlight cSpecial ctermfg=red
+
+augroup cprog
+  " Remove all cprog autocommands
+  au!
+  "   For C/C++ files set formatting of comments and set C-indenting on.
+  "   For other files switch it off.
+  "   Note: Don't change the order, it's important that the line with * comes first.
+  autocmd BufRead,BufNewFile *       set formatoptions=tcql nocindent comments&
+  autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
+  set cino=:0,(0,c1
+augroup END
+
+" Highlight TODO type comments
+autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp syntax keyword cTodo
+\ TODO FIXME BUG todo fixme bug
+
+" Highlight C typedefs, structs, and enums (_t, _s, _e)
+autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp syntax match cType /\w\+_t\ze\W/
+autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp syntax match cType /\w\+_s\ze\W/
+autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp syntax match cType /\w\+_e\ze\W/
+
+" Highlight C uppercase defines and constants
+autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp syntax match cDefine /\w\+[A-Z]\ze\W/
+autocmd BufRead,BufNewFile *.py syntax match Define /\w\+[A-Z]\ze\W/
+
+" Highlight C assert()
+autocmd BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp syntax keyword  cSpecial assert
+
+" Highlight __attribute__
+syntax keyword cAttribute __attribute__
+highlight cAttribute ctermfg=blue
+
+" Split the screen vertically with <shift L>
+map <S-L> :vsplit<CR>>
+
+" Remove trailing whitespace on file save.
+let white_space_allowed = ['markdown']
+autocmd BufWritePre * if index(white_space_allowed, &ft) < 0 | :%s/\s\+$//e
+
+" Force ctags to prompt when multiple definitions are found
+noremap <C-]> g<C-]>
+
+" Automatically enable spell checking on git commit messages
+autocmd FileType gitcommit setlocal spell
+
+"Enable the local host fuzzy finder (fzf must be installed on the host)
+"from within vim ``: FZF``  let the window open and search for your file
+
+" linux
+set rtp+=/usr/bin/fzf
+
+" mac
+"set rtp+=/usr/local/opt/fzf
+

@@ -1,0 +1,10 @@
+// This file needs to be placed in or simlinked to
+// Linux:   ~/.config/Code/User/keybindings.json
+// Mac:     ~/Library/Application\ Support/Code/User/keybindings.json
+[
+    {
+        "key": "ctrl+backspace",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    }
+]
