@@ -8,9 +8,17 @@ return {
     },
     {
         "neanias/everforest-nvim",
+        version = false,
         lazy = false,
         name = "everforest",
         priority = 1000,
+
+        config = function()
+            require("everforest").setup({
+                background = "hard",
+                italics = false,
+            })
+        end,
     },
     {
         "ellisonleao/gruvbox.nvim",
