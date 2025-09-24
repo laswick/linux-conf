@@ -1,6 +1,5 @@
-
 -- Generic
-vim.keymap.set('n', '<S-L>', ':vsplit<CR>', {})
+vim.keymap.set("n", "<S-L>", ":vsplit<CR>", {})
 
 --TODO: Add the mappings from lsp.lua
 -- nvim-lspconfig
@@ -18,10 +17,12 @@ vim.keymap.set('n', '<S-L>', ':vsplit<CR>', {})
 --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 -- neo-tree
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left toggle<CR>', {})
-vim.keymap.set('n', '<leader>bf', ':Neotree buffers reveal float<CR>', {})
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>", {})
+vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
 
 -- git
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", {})
 
+-- none-ls
+vim.keymap.set("n", "<leader>F", vim.lsp.buf.format, { desc = "Format current buffer" })
