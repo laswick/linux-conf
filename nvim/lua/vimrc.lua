@@ -10,8 +10,9 @@ vim.o.number = false
 vim.g.background = "dark"
 
 --vim.cmd.colorscheme "catppuccin"
-vim.cmd.colorscheme("gruvbox")
+--vim.cmd.colorscheme("gruvbox")
 --vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "miasma"
 
 -- Remove trailing whitespace on save, except for markdown files.
 vim.api.nvim_create_autocmd("BufWritePre", {
