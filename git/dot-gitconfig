@@ -2,10 +2,13 @@
     name = Rob Laswick
     email = robert.laswick@jdrfelectromag.com
 [diff]
-    tool = vimdiff
+    #tool = vimdiff
+    tool = nvimdiff
 [difftool]
     prompt = false
     trustExitCode = true # use :cq to abort a vimdiff with lots of files
+[difftool "nvimdiff"]
+    cmd = nvim -d -c 'colorscheme gruvbox' "$LOCAL" "$REMOTE"
 [alias]
     s = status -uno
     diffx = difftool
@@ -24,7 +27,6 @@
     who = "!f() { git branch -a | grep --color "/$1/"; }; f"
     bbme = "!f() { git branch -avv | grep --color "rl/"; }; f"
     stats = shortlog -sn
-
 [core]
     editor = nvim
 [push]
