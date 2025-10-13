@@ -25,3 +25,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		end
 	end,
 })
+
+
+-- Set the terminal title to the current file name.
+vim.o.title = true
+vim.o.titlestring = "%t"
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        vim.o.titlestring = vim.fn.expand("%:t")
+    end
+})
