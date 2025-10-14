@@ -1,4 +1,5 @@
 vim.o.expandtab = true
+
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
@@ -24,4 +25,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 			vim.fn.winrestview(save)
 		end
 	end,
+})
+
+
+-- Set the terminal title to the current file name.
+vim.o.title = true
+vim.o.titlestring = "%t"
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        vim.o.titlestring = vim.fn.expand("%:t")
+    end
 })
