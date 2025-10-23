@@ -37,3 +37,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
         vim.o.titlestring = vim.fn.expand("%:t")
     end
 })
+
+-- Add highlighting for TODO, FIXME, NOTE, and BUG comments.
+vim.api.nvim_set_hl(0, "TodoHighlight", { fg = "#FF0000", bg = "#FFFF00", bold = true })
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    pattern = { "*.c", "*.h", "*.cpp", "*.hpp", "*.py" },
+    callback = function()
+        vim.fn.matchadd("TodoHighlight", "\\<\\(TODO\\|FIXME\\|NOTE\\|BUG\\):")
+    end
+})
+
+
