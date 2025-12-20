@@ -1,11 +1,5 @@
 return {
 	{
-		"catppuccin/nvim",
-		lazy = false,
-		name = "catppuccin",
-		priority = 1000,
-	},
-	{
 		"neanias/everforest-nvim",
 		version = false,
 		lazy = false,
@@ -39,5 +33,8 @@ return {
         lazy = false,
         priority = 1000,
         opts = {},
+    },
+    {
+        "Mofiqul/vscode.nvim",
     },
 }
