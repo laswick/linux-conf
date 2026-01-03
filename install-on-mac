@@ -5,12 +5,14 @@
 
 STOW_ARGS="--verbose --dotfiles --target=$HOME"
 
-STOW_PACKAGES="zshrc vim git"
+STOW_PACKAGES="zshrc vim git tmux"
 
+# Install HOME directory packages
 for package in $STOW_PACKAGES; do
     stow $STOW_ARGS $package
 done
 
+# Install custom location packages
 stow --verbose --target=$HOME/Library/Application\ Support/Code/User vscode
 
 # Top level symlinks need to be done manually.

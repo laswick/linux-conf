@@ -13,9 +13,9 @@ vim.g.background = "dark"
 --vim.cmd.colorscheme "gruvbox"
 --vim.cmd.colorscheme "everforest"
 --vim.cmd.colorscheme "miasma"
---vim.cmd.colorscheme "gruvbox-material"
+vim.cmd.colorscheme "gruvbox-material"
 --vim.cmd.colorscheme "tokyonight-day"
-vim.cmd.colorscheme "vscode"
+--vim.cmd.colorscheme "vscode"
 
 -- Remove trailing whitespace on save, except for markdown files.
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -47,5 +47,4 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
         vim.fn.matchadd("TodoHighlight", "\\<\\(TODO\\|FIXME\\|NOTE\\|BUG\\):")
     end
 })
-
 
