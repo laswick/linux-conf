@@ -5,12 +5,14 @@
 
 STOW_ARGS="--verbose --dotfiles --target=$HOME"
 
-STOW_PACKAGES="bash vim git tmux"
+STOW_PACKAGES="vim git tmux"
 
 # Install HOME directory packages
 for package in $STOW_PACKAGES; do
     stow $STOW_ARGS $package
 done
+
+# NOTE: For bash, just add "source ~/linux-conf/bash/dot-bashrc" to ~/.bashrc
 
 # Install custom location packages
 stow --verbose --target=$HOME/.config/Code/User vscode

@@ -25,7 +25,11 @@
     bme = "!f() { git branch | grep --color "rl/" -A100 -B100; }; f"
     me = "!f() { git branch -a | grep --color "rl/" -A100 -B100; }; f"
     who = "!f() { git branch -a | grep --color "/$1/"; }; f"
-    bbme = "!f() { git branch -avv | grep --color "rl/"; }; f"
+    #bbme = "!f() { git branch -avv | grep --color "rl/"; }; f"
+
+    # List MY branches that are on the server, in order of creation date
+    bbme = "!f() { git for-each-ref --sort=creatordate --format='%(creatordate:iso8601) %(refname:short)' refs/remotes/ | awk '{print $4}' | sed 's|^origin/||' | grep "/rl/"; }; f"
+
     stats = shortlog -sn
 [core]
     editor = nvim
