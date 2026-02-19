@@ -23,6 +23,13 @@ return {
 
 			separator = "━━",
 			auto_fold = true, -- Automatically folds non-assistant messages
+
+            window = {
+                layout = "float",
+                width = 1.0,
+                height = 1.0,
+                boarder = "rounded",
+            },
 		},
 	},
 }

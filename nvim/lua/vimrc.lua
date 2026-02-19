@@ -6,7 +6,7 @@ vim.o.softtabstop = 4
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wrap = false
-vim.o.number = false
+vim.o.number = true
 
 vim.g.background = "dark"
 
@@ -16,6 +16,14 @@ vim.g.background = "dark"
 vim.cmd.colorscheme "gruvbox-material"
 --vim.cmd.colorscheme "tokyonight-day"
 --vim.cmd.colorscheme "vscode"
+
+
+
+-- This keeps the background dark (default) in CopilotChat.
+-- Without this the background turns to a light grey when launching
+-- copilot.
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+
 
 -- Remove trailing whitespace on save, except for markdown files.
 vim.api.nvim_create_autocmd("BufWritePre", {
