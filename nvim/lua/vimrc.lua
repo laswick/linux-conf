@@ -8,6 +8,10 @@ vim.o.smartcase = true
 vim.o.wrap = false
 vim.o.number = true
 
+-- status bar/line: filename    eol-type     percentage
+--vim.o.statusline = "%t %([%{&ff}]%) %p%%" -- basic
+vim.o.statusline = "%t%=%{&ff}%=%p%%" --properly justified
+
 vim.g.background = "dark"
 
 --vim.cmd.colorscheme "gruvbox"
