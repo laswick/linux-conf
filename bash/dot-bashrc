@@ -1,10 +1,8 @@
-
-
 # My Stuff:
 # Just source this file in ~/.bashrc
 #    source ~/linux-conf/bash/dot-bashrc
 
-source ~/.west-completion.sh
+#source ~/.west-completion.sh
 source ~/.git-prompt.sh
 
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -32,3 +30,4 @@ source $HOME/.local/pat.auth
 
 source $HOME/venv-jdrf/bin/activate
 
+eval "$(west jdrf-completion bash --with-hook)"
