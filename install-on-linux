@@ -16,6 +16,7 @@ done
 
 # Install custom location packages
 stow --verbose --target=$HOME/.config/Code/User vscode
+stow --verbose --target=$HOME/.config/zed zed
 
 # Top level symlinks need to be done manually.
 HERE=`pwd`
