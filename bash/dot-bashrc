@@ -20,8 +20,21 @@ export BABBLESIM_ROOT_PATH=$HOME/repos/bsim
 export NVIM_PATH=$HOME/tools/nvim-linux-x86_64/bin
 export NODE_JS_PATH=$HOME/tools/node-v22.19.0-linux-x64/bin
 export BLE_LOGGER_PATH=$HOME/tools/bleLogger
+export STM_CUBE_PROG_PATH=$HOME/tools/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
+export STM_CUBE_MX_PATH=$HOME/tools/STM32CubeMX
+export STM_CUBE_IDE_PATH=/opt/st/stm32cubeide_2.2.0
+alias STM32CubeIDE='stm32cubeide'
 
-export PATH=$HOME/bin:$HOME/.local/bin:$OLDER_CMAKE_PATH:$ARM_TOOLCHAIN_PATH:$NVIM_PATH:$NODE_JS_PATH:$BLE_LOGGER_PATH:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:\
+$OLDER_CMAKE_PATH:\
+$ARM_TOOLCHAIN_PATH:\
+$NVIM_PATH:\
+$NODE_JS_PATH:\
+$BLE_LOGGER_PATH:\
+$STM_CUBE_PROG_PATH:\
+$STM_CUBE_MX_PATH:\
+$STM_CUBE_IDE_PATH:\
+$PATH
 
 export STM32U5_POWERED_OVER_USB=1
 

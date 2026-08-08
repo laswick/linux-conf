@@ -28,6 +28,12 @@ vim.cmd.colorscheme "gruvbox-material"
 -- copilot.
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
+-- Make neo-tree look like the editor (colours)
+vim.api.nvim_set_hl(0, "NeoTreeNormal", { link = "Normal" })
+vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { link = "Normal" })
+vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { link = "Normal" })
+
+
 
 -- Remove trailing whitespace on save, except for markdown files.
 vim.api.nvim_create_autocmd("BufWritePre", {

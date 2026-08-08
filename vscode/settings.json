@@ -66,6 +66,7 @@
 
     "workbench.panel.defaultLocation": "right",
     "workbench.colorTheme": "Correia Gruvbox Theme",
-    "chat.agent.maxRequests": 50
+    "chat.agent.maxRequests": 50,
+    "chat.viewSessions.orientation": "stacked"
 }
 

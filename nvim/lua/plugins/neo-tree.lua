@@ -10,6 +10,23 @@ return {
 
 	config = function()
 		require("neo-tree").setup({
+            enable_diagnostics = false,
+            default_component_configs = {
+                icon = { enabled = false },
+                git_status = {
+                  symbols = {
+                    added     = "a",
+                    modified  = "+",
+                    deleted   = "-",
+                    renamed   = "r",
+                    untracked = "u",
+                    ignored   = "i",
+                    unstaged  = "",
+                    staged    = "s",
+                    conflict  = "c",
+                  },
+                },
+            },
 			filesystem = {
 				filtered_items = {
 					visible = true,
