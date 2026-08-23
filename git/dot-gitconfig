@@ -8,7 +8,7 @@
     prompt = false
     trustExitCode = true # use :cq to abort a vimdiff with lots of files
 [difftool "nvimdiff"]
-    cmd = nvim -d -c 'colorscheme gruvbox' "$LOCAL" "$REMOTE"
+    cmd = nvim -d -c 'colorscheme gruvbox-material' "$LOCAL" "$REMOTE"
 [alias]
     s = status -uno
     diffx = difftool

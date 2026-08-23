@@ -1,0 +1,26 @@
+# Ghostty configuration file
+#
+# List themes: ghostty +list-themes
+#
+# Reload config: <ctrl><shift><,>
+
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 15
+font-feature = +liga
+font-feature = +calt
+
+cursor-style = block
+cursor-style-blink = true
+
+window-padding-x = 10
+window-padding-y = 8
+
+window-width = 120
+window-height = 50
+
+theme = Gruvbox Material Dark
+
+background-opacity = 0.95
+background-blur = true
+
+keybind = f11=toggle_fullscreen
