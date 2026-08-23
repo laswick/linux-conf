@@ -17,6 +17,7 @@ vim.keymap.set("n", "<S-L>", ":vsplit<CR>", {})
 --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 -- neo-tree
+-- should probaly change <C-n> to <C-e> (for "explorer")
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>", {})
 vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
 
