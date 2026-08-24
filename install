@@ -5,7 +5,7 @@
 
 STOW_ARGS="--verbose --dotfiles --target=$HOME"
 
-STOW_PACKAGES="vim git tmux nvim ghostty zed vscode"
+STOW_PACKAGES="vim git tmux nvim ghostty zed vscode herdr"
 
 for package in $STOW_PACKAGES; do
     stow $STOW_ARGS $package
