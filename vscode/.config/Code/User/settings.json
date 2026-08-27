@@ -65,7 +65,7 @@
     "github.copilot.nextEditSuggestions.enabled": true,
 
     "workbench.panel.defaultLocation": "right",
-    "workbench.colorTheme": "Correia Gruvbox Theme",
+    "workbench.colorTheme": "Gruvbox Material Dark",
     "chat.agent.maxRequests": 50,
     "chat.viewSessions.orientation": "stacked"
 }

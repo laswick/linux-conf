@@ -7,7 +7,12 @@ source ~/.git-prompt.sh
 
 GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1='\n\[\e[1;32m\]\u\[\e[34m\]@\[\e[32m\]\h $(__git_ps1 "\e[1;35m%s")\n\[\e[1;34m\]\w\n\[\e[1;36m\]$\[\e[0m\] '
+# prompt: $
+#PS1='\n\[\e[1;32m\]\u\[\e[34m\]@\[\e[32m\]\h $(__git_ps1 "\e[1;35m%s")\n\[\e[1;34m\]\w\n\[\e[1;36m\]$\[\e[0m\] '
+
+# prompt: ❯
+# note: glyphs required (https://www.nerdfonts.com)
+PS1='\n\[\e[1;32m\]\u\[\e[34m\]@\[\e[32m\]\h $(__git_ps1 "\e[1;35m%s")\n\[\e[1;34m\]\w\n\[\e[1;36m\]❯\[\e[0m\] '
 
 alias bc='bc -l'
 alias code='code -n'

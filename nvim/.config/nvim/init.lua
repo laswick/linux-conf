@@ -25,7 +25,6 @@ vim.opt.updatetime = 250
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 
-
 -- Plugins
 vim.pack.add({
     "https://github.com/sainnhe/gruvbox-material",
@@ -48,8 +47,17 @@ vim.g.background = "dark"
 --vim.g.gruvbox_material_foreground = "material"
 vim.cmd.colorscheme "gruvbox-material"
 
--- Super simple status line: filename    eol-type     percentage
-vim.o.statusline = "%t%=%{&ff}%=%p%%" --properly justified
+-- Set the status line colour to a handsome dark teal.
+vim.api.nvim_set_hl(0, "StatusLine", {
+    fg = "#3c6f70",
+})
+
+-- Super simple status line: filename    eol-type     percentage (properly justified)
+--vim.o.statusline = "%t%=%{&ff}%=%p%%"
+
+-- Status line: path/filename (left justified)
+vim.o.statusline = "❯❯❯ 󰈙 %{v:lua.vim.fn.expand('%:~')}"
+
 
 -- Remove trailing whitespace on save, except for markdown files.
 vim.api.nvim_create_autocmd("BufWritePre", {
