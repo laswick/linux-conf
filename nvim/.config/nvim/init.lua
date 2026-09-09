@@ -14,7 +14,7 @@ vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
 
 vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamedplus" -- use the system clipboard!
+vim.opt.clipboard = "unnamedplus" -- use the system clipboard! Note: xclip is required (sudo apt install xclip)
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
