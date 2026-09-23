@@ -18,6 +18,7 @@ alias bc='bc -l'
 alias code='code -n'
 alias vi='nvim'
 alias ll='ls -alFh'
+alias claude='CALLING_PATH="$(pwd)"; cd "$HOME/repos/cog-second-brain"; claude --add-dir "$CALLING_PATH" --append-system-prompt "The user launched this session from $CALLING_PATH. Treat that as the directory they are currently working out of."'
 
 export OLDER_CMAKE_PATH=$HOME/tools/cmake-3.26.6-linux-x86_64/bin
 export ARM_TOOLCHAIN_ROOT_PATH=$HOME/tools/gcc-arm-none-eabi-9-2019-q4-major
